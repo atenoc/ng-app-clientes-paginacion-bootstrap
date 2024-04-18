@@ -1,0 +1,33 @@
+  <mat-paginator #paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
+  <table mat-table [dataSource]="dataSource" class="table table-bordered table-striped">
+    <!-- Encabezados de la tabla -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let cliente"> {{ cliente.id }} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="nombre">
+      <th mat-header-cell *matHeaderCellDef> Nombre </th>
+      <td mat-cell *matCellDef="let cliente"> {{ cliente.nombre }} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="apellido">
+      <th mat-header-cell *matHeaderCellDef> Apellido </th>
+      <td mat-cell *matCellDef="let cliente"> {{ cliente.apellido }} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef> Correo </th>
+      <td mat-cell *matCellDef="let cliente"> {{ cliente.email }} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="createAt">
+      <th mat-header-cell *matHeaderCellDef> Fecha </th>
+      <td mat-cell *matCellDef="let cliente"> {{ cliente.createAt }} </td>
+    </ng-container>
+  
+    <!-- Cuerpo de la tabla -->
+    <tr mat-row *matRowDef="let row; columns: ['id', 'nombre', 'apellido', 'email', 'createAt']"></tr>
+  </table>
+  
